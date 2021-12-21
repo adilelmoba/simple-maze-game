@@ -13,7 +13,7 @@ const award = document.querySelector('.award');
 const sound = document.querySelector('.sound');
 
 const collisionCheck = value => {
-  if (value === 'maze-border') alert('You lost... try again. 😢');
+  if (value === 'maze-border') alert('You lost... Tap Enter and Continue! 🤟');
   if (value === 'finish') {
     nextButton.style.opacity = '1';
     nextButton.style.pointerEvents = 'all';
@@ -28,6 +28,7 @@ const collisionCheck = value => {
 }
 
 window.addEventListener('mousemove', (e) => {
+  console.log(e.target);
   let check = e.target.classList.value;
 
   collisionCheck(check);
